@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using _3practsheynemanv.Pages;
 
 namespace _3practsheynemanv
@@ -9,16 +8,21 @@ namespace _3practsheynemanv
         public MainWindow()
         {
             InitializeComponent();
+            // Загружаем страницу авторизации при старте
             FrmMain.Navigate(new Autho());
         }
 
+        // Обработчик кнопки "Назад"
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             if (FrmMain.CanGoBack)
+            {
                 FrmMain.GoBack();
+            }
         }
 
-        private void FrmMain_ContentRendered(object sender, EventArgs e)
+        // Скрываем/показываем кнопку "Назад" в зависимости от истории навигации
+        private void FrmMain_ContentRendered(object sender, System.EventArgs e)
         {
             if (FrmMain.CanGoBack)
                 btnBack.Visibility = Visibility.Visible;

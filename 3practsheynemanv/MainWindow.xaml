@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_3practsheynemanv"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Руль" Height="710" Width="1000" MinHeight="710" MinWidth="1000"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Верхняя панель -->
         <Grid Grid.Row="0" Background="#FF76E383">
-            <Button Name="btnBack"
-                    HorizontalAlignment="Right"
-                    Content="Назад"
-                    Click="btnBack_Click"/>
+            <Button x:Name="btnBack" Content="Назад" HorizontalAlignment="Right" 
+                    Cursor="Hand" Click="btnBack_Click" Width="120" Height="40" Margin="0,0,10,0"/>
+            <Image HorizontalAlignment="Left" Margin="10,7,0,7" Width="45" Source="/Images/logo.jpg"/>
         </Grid>
 
-        <Frame x:Name="FrmMain"
-               Grid.Row="1"
-               NavigationUIVisibility="Hidden"
+        <!-- Фрейм для страниц -->
+        <Frame x:Name="FrmMain" Grid.Row="1" NavigationUIVisibility="Hidden" 
                ContentRendered="FrmMain_ContentRendered"/>
     </Grid>
 </Window>
